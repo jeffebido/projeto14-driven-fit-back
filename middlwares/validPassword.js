@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-export async function validPassword(req, res){
+export async function validPassword(req, res, next){
   const user = await req.body;
   console.log(user)
 

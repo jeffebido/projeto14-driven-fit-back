@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-export async function validSignUp(req, res){
+export async function validLogIn(req, res, next){
   const user = await req.body;
   console.log(user)
 
