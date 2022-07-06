@@ -1,21 +1,20 @@
 import express from "express"
 import db from "../database.js"
 import joi from "joi";
-import bcrypt from 'bcrypt';
-import { v4 as uuid } from 'uuid';
+import joiPassword from "joi-password"
 
 const app = express();
 
 app.use(express.json());
 
-export async function validSignUp(req, res){
+export async function validSignUp(req, res, next){
   const {name, email, password, photo} = req.body;
     console.log(req.body);
 
     const schemaSignUp = joi.object({
       name: joi.string().required(),
       email: joi.string().email().required(),
-      photo: joi.string.uri().required(),
+      photo: joi.string().uri().required(),
       password: joi.string().required(),
       confirm: joi.ref("password") 
   })

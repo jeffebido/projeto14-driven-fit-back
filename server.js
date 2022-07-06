@@ -3,7 +3,6 @@ import cors from "cors"
 import chalk from "chalk"
 import dotenv from "dotenv"
 import userRouter from './router/userRoute.js';
-import moveRouter from './router/moveRoute.js'
 
 const app = express();
 
@@ -16,8 +15,9 @@ const PORT = process.env.PORT
 //HANDLES SIGNUP AND LOGIN
 app.use(userRouter)
 
-// HANDLES CREDIT DEBIT AND BALANCE DISPLAY
-// app.use(moveRouter)
+// HANDLES HOME AND PRODUCT
+
+// HANDLES CART AND CHECKOUT
 
 
 app.listen(PORT, () => {
