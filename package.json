@@ -2,7 +2,7 @@
   "name": "projeto14-driven-fit-back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
