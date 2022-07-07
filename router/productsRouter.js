@@ -5,7 +5,7 @@ import { tokenMiddleware } from '../middlwares/tokenMiddleware.js';
 
 const router = Router();
 
-//router.use(tokenMiddleware);
+router.use(tokenMiddleware);
 
 router.get("/products", getAllProducts);
 
