@@ -22,6 +22,6 @@ app.use(producstRouter);
 // HANDLES CART AND CHECKOUT
 
 
-app.listen(PORT, () => {
+app.listen(PORT,'127.0.0.1', () => {
     console.log(chalk.bold.blue('SERVER_UP ON PORT' + PORT));
 });
