@@ -21,7 +21,6 @@ export async function validSignUp(req, res, next){
     const schemaSignUp = joi.object({
       name: joi.string().required(),
       email: joi.string().email().required(),
-      photo: joi.string().uri().required(),
       password: joi.string().required(),
       confirm: joi.ref("password") 
   })
