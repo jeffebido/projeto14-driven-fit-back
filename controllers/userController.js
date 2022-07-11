@@ -25,9 +25,9 @@ export async function LogIn(req, res){db;
     if(session){
       try{
         await db.collection('sessions').updateOne(
-          {_id: user._id}, // FIND SESSION 
+          {userId: user._id}, // FIND SESSION 
           {$set:{token: token}}) // UPDATE SESSION FIELD
-        return res.status(200).send(loginData)
+        return res.status(200).send(loginData, 'atualizado')
       } catch(err){
         console.log(err)
       }
