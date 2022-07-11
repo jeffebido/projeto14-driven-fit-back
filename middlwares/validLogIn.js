@@ -3,7 +3,7 @@ import joi from "joi";
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); 
 
 export async function validLogIn(req, res, next){
   const user = await req.body;

@@ -8,18 +8,24 @@ const app = express();
 app.use(express.json());
 
 export async function validSignUp(req, res, next){
-  const {name, email, password, photo} = req.body;
+  const {name, email, password, confirm, photo} = req.body;
     console.log(req.body);
+  
+  const schema = {
+    name,
+    email,
+    password,
+    confirm
+  }
 
     const schemaSignUp = joi.object({
       name: joi.string().required(),
       email: joi.string().email().required(),
-      photo: joi.string().uri().required(),
       password: joi.string().required(),
       confirm: joi.ref("password") 
   })
 
-  const {error} = schemaSignUp.validate(req.body,{abortEarly: false});
+  const {error} = schemaSignUp.validate(schema,{abortEarly: false});
 
   if (error) {
       return res.status(422).send(error);
